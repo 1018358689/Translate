@@ -1,0 +1,2 @@
+enum34 会导致 pyinstaller -F Clip_Translate.py 失败
+enum34 是tensorflow的必要库

@@ -36,7 +36,7 @@ class G_Translate():
         # pprint(res.json())
         json_content = res.json()
         trans = json_content['sentences'][0]['trans']
-        self.__Print_it(trans)
+        # self.__Print_it(trans)
         return trans
 
     def __check_contain_chinese(self, check_str):
@@ -45,14 +45,16 @@ class G_Translate():
                 return True
         return False
 
-    def __Print_it(self, trans):
-        print('翻译：' + Fore.LIGHTGREEN_EX + trans + Fore.RESET)
-
+    # def __Print_it(self, trans):
+    #     print('输出：' + Fore.LIGHTGREEN_EX + trans + Fore.RESET)
 
 if __name__ == '__main__':
+    count = 0
     while 1:
-        w = input('输入你要查的词语：')
+        count += 1
+        w = input('{}.输入：'.format(count))
         print('')
         cb = G_Translate()
-        cb.Translate_it(w)
+        result = cb.Translate_it(w)
+        print('{}.输出：'.format(count) + Fore.LIGHTGREEN_EX + result + Fore.RESET)
         print('\n**********************\n')
